@@ -1,0 +1,1898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NARESH Live Inn Guest House - Maddilapalem, Visakhapatnam</title>
+
+    <style>
+        :root {
+            --navy: #142033;
+            --gold: #c99432;
+            --gold-dark: #a9781f;
+            --cream: #f8f6f1;
+            --white: #ffffff;
+            --text: #273142;
+            --muted: #718096;
+            --green: #25d366;
+            --green-dark: #128c7e;
+            --border: #e8e5df;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        button,
+        input,
+        select {
+            font-family: inherit;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--navy);
+            color: white;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 18px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo h1 {
+            font-family: Georgia, serif;
+            font-size: 25px;
+            color: white;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--gold);
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 72vh;
+            background:
+                linear-gradient(
+                    rgba(20, 32, 51, 0.72),
+                    rgba(20, 32, 51, 0.72)
+                ),
+                url("https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=85")
+                center/cover no-repeat;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 40px 20px;
+        }
+
+        .hero h2 {
+            font-family: Georgia, serif;
+            font-size: clamp(38px, 6vw, 68px);
+            color: var(--gold);
+            margin-bottom: 15px;
+            line-height: 1.15;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+        }
+
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 25px;
+        }
+
+        .hero-badges span {
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            padding: 9px 17px;
+            border-radius: 30px;
+            backdrop-filter: blur(5px);
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .hero-btn {
+            padding: 13px 25px;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .hero-btn.primary {
+            background: var(--gold);
+            color: white;
+        }
+
+        .hero-btn.primary:hover {
+            background: var(--gold-dark);
+        }
+
+        .hero-btn.secondary {
+            background: white;
+            color: var(--navy);
+        }
+
+        .hero-btn.secondary:hover {
+            background: #eee;
+        }
+
+        /* =========================
+           COMMON SECTIONS
+        ========================= */
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 75px 25px;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-heading .small-title {
+            color: var(--gold);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            margin-bottom: 8px;
+        }
+
+        .section-heading h2 {
+            font-family: Georgia, serif;
+            color: var(--navy);
+            font-size: clamp(32px, 5vw, 48px);
+            margin-bottom: 10px;
+        }
+
+        .section-heading h2 span {
+            color: var(--gold);
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            font-size: 17px;
+        }
+
+        /* =========================
+           ROOMS
+        ========================= */
+
+        #rooms {
+            background: var(--cream);
+        }
+
+        .rooms-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .room-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .room-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .room-image {
+            height: 330px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .room-image img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .room-card:hover .room-image img {
+            transform: scale(1.05);
+        }
+
+        .popular-badge {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            background: var(--gold);
+            color: white;
+            padding: 9px 17px;
+            border-radius: 25px;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .price-tag {
+            position: absolute;
+            right: 18px;
+            bottom: 18px;
+            background: white;
+            color: var(--navy);
+            padding: 13px 17px;
+            border-radius: 13px;
+            font-size: 20px;
+            font-weight: 800;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);
+        }
+
+        .price-tag span {
+            font-size: 12px;
+            color: var(--muted);
+            font-weight: 500;
+        }
+
+        .room-content {
+            padding: 30px;
+        }
+
+        .room-type {
+            color: var(--gold);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            margin-bottom: 13px;
+        }
+
+        .room-content h3 {
+            font-family: Georgia, serif;
+            color: var(--navy);
+            font-size: 29px;
+            margin-bottom: 12px;
+        }
+
+        .room-description {
+            color: var(--muted);
+            min-height: 58px;
+        }
+
+        .room-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 20px 0;
+        }
+
+        .room-features span {
+            background: #f7f5f0;
+            padding: 8px 11px;
+            border-radius: 7px;
+            font-size: 13px;
+            color: #4a5568;
+        }
+
+        .select-room-btn {
+            width: 100%;
+            border: none;
+            background: var(--navy);
+            color: white;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .select-room-btn:hover {
+            background: var(--gold);
+        }
+
+        /* =========================
+           AMENITIES
+        ========================= */
+
+        #amenities {
+            background: white;
+        }
+
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .amenity {
+            background: var(--cream);
+            border-radius: 14px;
+            padding: 25px 15px;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+
+        .amenity-icon {
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        .amenity h3 {
+            color: var(--navy);
+            font-size: 17px;
+        }
+
+        .amenity p {
+            color: var(--muted);
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        /* =========================
+           BOOKING
+        ========================= */
+
+        #booking {
+            background: var(--cream);
+        }
+
+        .booking-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        .card-panel {
+            background: white;
+            padding: 32px;
+            border-radius: 18px;
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.07);
+            border: 1px solid var(--border);
+        }
+
+        .card-panel h3 {
+            font-family: Georgia, serif;
+            color: var(--navy);
+            font-size: 28px;
+            margin-bottom: 22px;
+        }
+
+        .form-group {
+            margin-bottom: 17px;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--navy);
+            font-weight: 700;
+            margin-bottom: 7px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #cbd5e0;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+            background: white;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: var(--gold);
+        }
+
+        .date-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .whatsapp-btn {
+            width: 100%;
+            border: none;
+            background: var(--green);
+            color: white;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 17px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .whatsapp-btn:hover {
+            background: var(--green-dark);
+        }
+
+        /* =========================
+           PAYMENT
+        ========================= */
+
+        .payment-box {
+            margin-top: 25px;
+            background: #eef8ff;
+            border: 1px dashed #3182ce;
+            border-radius: 12px;
+            padding: 22px;
+            text-align: center;
+        }
+
+        .payment-box h4 {
+            color: #2466a5;
+            font-size: 19px;
+            margin-bottom: 8px;
+        }
+
+        .upi-id {
+            display: inline-block;
+            margin: 8px 0 15px;
+            background: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-weight: 800;
+            color: var(--navy);
+            word-break: break-all;
+        }
+
+        .payment-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .pay-btn,
+        .copy-btn,
+        .confirm-payment-btn {
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .pay-btn {
+            background: var(--gold);
+            color: white;
+        }
+
+        .pay-btn:hover {
+            background: var(--gold-dark);
+        }
+
+        .copy-btn {
+            background: var(--navy);
+            color: white;
+        }
+
+        .copy-btn:hover {
+            background: #0d1726;
+        }
+
+        .confirm-payment-btn {
+            width: 100%;
+            margin-top: 10px;
+            background: var(--green);
+            color: white;
+        }
+
+        .confirm-payment-btn:hover {
+            background: var(--green-dark);
+        }
+
+        .payment-note {
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 12px;
+        }
+
+        /* =========================
+           POLICY
+        ========================= */
+
+        .policy-panel {
+            border-left: 5px solid var(--gold);
+        }
+
+        .policy-list {
+            list-style: none;
+        }
+
+        .policy-list li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 16px;
+            color: #4a5568;
+        }
+
+        .policy-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #38a169;
+            font-weight: 800;
+        }
+
+        .policy-list li.alert::before {
+            content: "⚠";
+            color: #e53e3e;
+        }
+
+        /* =========================
+           LOCATION
+        ========================= */
+
+        #location {
+            background: white;
+        }
+
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .location-card {
+            background: var(--cream);
+            padding: 30px;
+            border-radius: 18px;
+        }
+
+        .location-card h3 {
+            font-family: Georgia, serif;
+            color: var(--navy);
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .location-card p {
+            color: var(--muted);
+            margin-bottom: 10px;
+        }
+
+        .map-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 20px;
+            background: var(--navy);
+            color: white;
+            border-radius: 8px;
+            font-weight: 700;
+        }
+
+        .map-btn:hover {
+            background: var(--gold);
+        }
+
+        .map-frame {
+            width: 100%;
+            min-height: 330px;
+            border: 0;
+            border-radius: 18px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: var(--navy);
+            color: white;
+            padding: 55px 25px 25px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+        }
+
+        .footer-col h4 {
+            color: var(--gold);
+            font-family: Georgia, serif;
+            font-size: 21px;
+            margin-bottom: 15px;
+        }
+
+        .footer-col p,
+        .footer-col a {
+            color: #d7dde7;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .footer-col a:hover {
+            color: var(--gold);
+        }
+
+        .copyright {
+            max-width: 1200px;
+            margin: 35px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid #344054;
+            text-align: center;
+            color: #aeb7c5;
+            font-size: 14px;
+        }
+
+        /* =========================
+           FLOATING BUTTONS
+        ========================= */
+
+        .floating-buttons {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .floating-btn {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 23px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .floating-call {
+            background: #2563eb;
+        }
+
+        .floating-whatsapp {
+            background: var(--green);
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 950px) {
+
+            .rooms-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .amenities-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .booking-grid,
+            .location-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            .header-container {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav {
+                gap: 14px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                font-size: 14px;
+            }
+
+            .hero {
+                min-height: 75vh;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .rooms-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .amenities-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .date-grid {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .payment-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .room-image {
+                height: 300px;
+            }
+
+            .container {
+                padding: 55px 18px;
+            }
+        }
+
+        @media (max-width: 400px) {
+
+            .amenities-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .room-content {
+                padding: 23px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+    <div class="header-container">
+
+        <div class="logo">
+            <h1>NARESH <span>Live Inn</span></h1>
+        </div>
+
+        <nav>
+            <a href="#rooms">Rooms</a>
+            <a href="#amenities">Amenities</a>
+            <a href="#booking">Book Now</a>
+            <a href="#location">Location</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <h2>NARESH Live Inn Guest House</h2>
+
+    <p>
+        Maddilapalem, Visakhapatnam
+        <br>
+        Opposite CMR Central
+    </p>
+
+    <div class="hero-badges">
+        <span>Couple Friendly</span>
+        <span>18+ Welcome</span>
+        <span>Safe Stay</span>
+    </div>
+
+    <div class="hero-buttons">
+
+        <a href="#rooms" class="hero-btn primary">
+            View Rooms
+        </a>
+
+        <a href="tel:+919700621165" class="hero-btn secondary">
+            📞 Call Now
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ROOMS
+========================= -->
+
+<section id="rooms">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="small-title">
+                OUR ROOMS
+            </div>
+
+            <h2>
+                Choose the Room that
+                <span>Fits Your Stay</span>
+            </h2>
+
+            <p>
+                Select from our available room sharing options.
+            </p>
+
+        </div>
+
+
+        <div class="rooms-grid">
+
+
+            <!-- SINGLE ROOM -->
+
+            <div class="room-card">
+
+                <div class="room-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1000&q=85"
+                        alt="Standard Single Room"
+                    >
+
+                    <div class="price-tag">
+                        ₹1,000
+                        <span>/ day</span>
+                    </div>
+
+                </div>
+
+
+                <div class="room-content">
+
+                    <div class="room-type">
+                        SINGLE
+                    </div>
+
+                    <h3>
+                        Standard Single
+                    </h3>
+
+                    <p class="room-description">
+                        Comfortable room suitable for individual guests.
+                    </p>
+
+
+                    <div class="room-features">
+
+                        <span>🛏️ 1 Guest</span>
+
+                        <span>❄️ A/C</span>
+
+                        <span>📶 Wi-Fi</span>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="select-room-btn"
+                        onclick="selectRoom('Standard Single', 1000)"
+                    >
+                        Select Room →
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- DOUBLE ROOM -->
+
+            <div class="room-card">
+
+                <div class="room-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1000&q=85"
+                        alt="Standard Double Room"
+                    >
+
+                    <div class="popular-badge">
+                        POPULAR
+                    </div>
+
+                    <div class="price-tag">
+                        ₹1,300
+                        <span>/ day</span>
+                    </div>
+
+                </div>
+
+
+                <div class="room-content">
+
+                    <div class="room-type">
+                        DOUBLE
+                    </div>
+
+                    <h3>
+                        Standard Double
+                    </h3>
+
+                    <p class="room-description">
+                        A comfortable option for two guests sharing a room.
+                    </p>
+
+
+                    <div class="room-features">
+
+                        <span>👥 2 Guests</span>
+
+                        <span>❄️ A/C</span>
+
+                        <span>📶 Wi-Fi</span>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="select-room-btn"
+                        onclick="selectRoom('Standard Double', 1300)"
+                    >
+                        Select Room →
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- TRIPLE ROOM -->
+
+            <div class="room-card">
+
+                <div class="room-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=85"
+                        alt="Standard Triple Room"
+                    >
+
+                    <div class="price-tag">
+                        ₹1,500
+                        <span>/ day</span>
+                    </div>
+
+                </div>
+
+
+                <div class="room-content">
+
+                    <div class="room-type">
+                        TRIPLE
+                    </div>
+
+                    <h3>
+                        Standard Triple
+                    </h3>
+
+                    <p class="room-description">
+                        Best suited for families or three guests.
+                    </p>
+
+
+                    <div class="room-features">
+
+                        <span>👥 3 Guests</span>
+
+                        <span>❄️ A/C</span>
+
+                        <span>📶 Wi-Fi</span>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="select-room-btn"
+                        onclick="selectRoom('Standard Triple', 1500)"
+                    >
+                        Select Room →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     AMENITIES
+========================= -->
+
+<section id="amenities">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="small-title">
+                OUR FACILITIES
+            </div>
+
+            <h2>
+                Amenities
+            </h2>
+
+            <p>
+                Comfortable facilities for a safe and convenient stay.
+            </p>
+
+        </div>
+
+
+        <div class="amenities-grid">
+
+            <div class="amenity">
+                <div class="amenity-icon">📶</div>
+                <h3>Free Wi-Fi</h3>
+                <p>Stay connected during your visit.</p>
+            </div>
+
+
+            <div class="amenity">
+                <div class="amenity-icon">🚗</div>
+                <h3>Safe Parking</h3>
+                <p>Road safety parking facility.</p>
+            </div>
+
+
+            <div class="amenity">
+                <div class="amenity-icon">❄️</div>
+                <h3>A/C Rooms</h3>
+                <p>Comfortable air-conditioned rooms.</p>
+            </div>
+
+
+            <div class="amenity">
+                <div class="amenity-icon">🔒</div>
+                <h3>24/7 Security</h3>
+                <p>Safe and secure environment.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     BOOKING
+========================= -->
+
+<section id="booking">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="small-title">
+                RESERVATION
+            </div>
+
+            <h2>
+                Book Your Stay
+            </h2>
+
+            <p>
+                Enter your details and send your booking request through WhatsApp.
+            </p>
+
+        </div>
+
+
+        <div class="booking-grid">
+
+
+            <!-- BOOKING FORM -->
+
+            <div class="card-panel">
+
+                <h3>
+                    Booking Details
+                </h3>
+
+
+                <form id="bookingForm">
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="phone">
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="Enter phone number"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="date-grid">
+
+                        <div class="form-group">
+
+                            <label for="checkin">
+                                Check-In Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="checkin"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="checkout">
+                                Check-Out Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="checkout"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="roomType">
+                            Room Type
+                        </label>
+
+                        <select id="roomType" required>
+
+                            <option value="Standard Single" data-price="1000">
+                                Standard Single - ₹1,000
+                            </option>
+
+                            <option value="Standard Double" data-price="1300">
+                                Standard Double - ₹1,300
+                            </option>
+
+                            <option value="Standard Triple" data-price="1500">
+                                Standard Triple - ₹1,500
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="whatsapp-btn"
+                    >
+                        📲 Book via WhatsApp
+                    </button>
+
+                </form>
+
+
+                <!-- PAYMENT -->
+
+                <div class="payment-box">
+
+                    <h4>
+                        💳 Online Payment
+                    </h4>
+
+                    <p>
+                        Google Pay / PhonePe / Paytm
+                    </p>
+
+                    <div class="upi-id">
+                        9700621165@hdfc
+                    </div>
+
+
+                    <div class="payment-buttons">
+
+                        <button
+                            type="button"
+                            class="pay-btn"
+                            onclick="makePayment()"
+                        >
+                            Pay Now
+                        </button>
+
+                        <button
+                            type="button"
+                            class="copy-btn"
+                            onclick="copyUPI()"
+                        >
+                            Copy UPI
+                        </button>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="confirm-payment-btn"
+                        onclick="confirmPayment()"
+                    >
+                        ✅ I Have Made Payment
+                    </button>
+
+
+                    <p class="payment-note">
+                        After making payment, please send your payment confirmation through WhatsApp.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- POLICY -->
+
+            <div class="card-panel policy-panel">
+
+                <h3>
+                    Guest Policy & Timings
+                </h3>
+
+
+                <ul class="policy-list">
+
+                    <li>
+                        <strong>Check-In:</strong>
+                        12:00 PM
+                    </li>
+
+                    <li>
+                        <strong>Check-Out:</strong>
+                        11:00 AM
+                    </li>
+
+                    <li class="alert">
+                        Early Check-In and Late Check-Out are subject to room availability.
+                    </li>
+
+                    <li>
+                        <strong>18+ Age Limit:</strong>
+                        Only guests aged 18 and above are allowed to check-in.
+                    </li>
+
+                    <li>
+                        <strong>Couple Friendly:</strong>
+                        Safe and welcoming environment for unmarried couples.
+                    </li>
+
+                    <li class="alert">
+                        <strong>Mandatory ID Proof:</strong>
+                        Original Aadhaar Card, Driving Licence, or Voter ID must be submitted during check-in.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     LOCATION
+========================= -->
+
+<section id="location">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="small-title">
+                FIND US
+            </div>
+
+            <h2>
+                Our Location
+            </h2>
+
+            <p>
+                Conveniently located in Maddilapalem, Visakhapatnam.
+            </p>
+
+        </div>
+
+
+        <div class="location-grid">
+
+
+            <div class="location-card">
+
+                <h3>
+                    NARESH Live Inn
+                </h3>
+
+                <p>
+                    📍 Pithapuram Colony, Maddilapalem
+                </p>
+
+                <p>
+                    Opposite CMR Central Mall
+                </p>
+
+                <p>
+                    Visakhapatnam, Andhra Pradesh 530003
+                </p>
+
+                <p>
+                    📞 +91 9700621165
+                </p>
+
+                <p>
+                    ✉ liveinnvizag@gmail.com
+                </p>
+
+
+                <a
+                    href="https://www.google.com/maps/search/?api=1&query=NARESH+Live+Inn+Guest+House+Maddilapalem+Visakhapatnam"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="map-btn"
+                >
+                    📍 View on Google Maps
+                </a>
+
+            </div>
+
+
+            <iframe
+                class="map-frame"
+                src="https://www.google.com/maps?q=NARESH%20Live%20Inn%20Guest%20House%20Maddilapalem%20Visakhapatnam&output=embed"
+                loading="lazy"
+                title="NARESH Live Inn Guest House Location">
+            </iframe>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-grid">
+
+
+        <div class="footer-col">
+
+            <h4>
+                NARESH Live Inn
+            </h4>
+
+            <p>
+                Your comfortable and safe home stay experience in Visakhapatnam at affordable rates.
+            </p>
+
+        </div>
+
+
+        <div class="footer-col">
+
+            <h4>
+                Contact
+            </h4>
+
+            <a href="tel:+919700621165">
+                📞 +91 9700621165
+            </a>
+
+            <a href="mailto:liveinnvizag@gmail.com">
+                ✉ liveinnvizag@gmail.com
+            </a>
+
+            <a href="https://wa.me/919700621165" target="_blank" rel="noopener noreferrer">
+                💬 WhatsApp
+            </a>
+
+        </div>
+
+
+        <div class="footer-col">
+
+            <h4>
+                Address
+            </h4>
+
+            <p>
+                Pithapuram Colony, Maddilapalem
+            </p>
+
+            <p>
+                Opposite CMR Central Mall
+            </p>
+
+            <p>
+                Visakhapatnam, Andhra Pradesh 530003
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 NARESH Live Inn Guest House.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+<!-- =========================
+     FLOATING BUTTONS
+========================= -->
+
+<div class="floating-buttons">
+
+    <a
+        href="tel:+919700621165"
+        class="floating-btn floating-call"
+        title="Call NARESH Live Inn"
+    >
+        📞
+    </a>
+
+
+    <a
+        href="https://wa.me/919700621165"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="floating-btn floating-whatsapp"
+        title="WhatsApp NARESH Live Inn"
+    >
+        💬
+    </a>
+
+</div>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+    /* =========================
+       DETAILS
+    ========================= */
+
+    const WHATSAPP_NUMBER = "919700621165";
+    const UPI_ID = "9700621165@hdfc";
+    const HOTEL_NAME = "NARESH Live Inn Guest House";
+
+
+    /* =========================
+       SET TODAY AS MIN DATE
+    ========================= */
+
+    const today = new Date();
+
+    const year = today.getFullYear();
+
+    const month = String(today.getMonth() + 1).padStart(2, "0");
+
+    const day = String(today.getDate()).padStart(2, "0");
+
+    const todayString = `${year}-${month}-${day}`;
+
+    const checkinInput = document.getElementById("checkin");
+    const checkoutInput = document.getElementById("checkout");
+
+    checkinInput.min = todayString;
+    checkoutInput.min = todayString;
+
+
+    /* =========================
+       CHECK-IN / CHECK-OUT
+    ========================= */
+
+    checkinInput.addEventListener("change", function () {
+
+        checkoutInput.min = this.value;
+
+        if (
+            checkoutInput.value &&
+            checkoutInput.value < this.value
+        ) {
+            checkoutInput.value = "";
+        }
+
+    });
+
+
+    /* =========================
+       SELECT ROOM
+    ========================= */
+
+    function selectRoom(roomName, price) {
+
+        const roomSelect = document.getElementById("roomType");
+
+        for (let i = 0; i < roomSelect.options.length; i++) {
+
+            if (roomSelect.options[i].value === roomName) {
+
+                roomSelect.selectedIndex = i;
+
+                break;
+            }
+        }
+
+        document.getElementById("booking").scrollIntoView({
+            behavior: "smooth"
+        });
+
+    }
+
+
+    /* =========================
+       WHATSAPP BOOKING
+    ========================= */
+
+    document
+        .getElementById("bookingForm")
+        .addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            const name =
+                document.getElementById("name").value.trim();
+
+            const phone =
+                document.getElementById("phone").value.trim();
+
+            const checkin =
+                document.getElementById("checkin").value;
+
+            const checkout =
+                document.getElementById("checkout").value;
+
+            const roomSelect =
+                document.getElementById("roomType");
+
+            const room =
+                roomSelect.value;
+
+            const selectedOption =
+                roomSelect.options[roomSelect.selectedIndex];
+
+            const price =
+                selectedOption.getAttribute("data-price");
+
+
+            if (!name || !phone || !checkin || !checkout) {
+
+                alert("Please fill in all booking details.");
+
+                return;
+            }
+
+
+            if (checkout <= checkin) {
+
+                alert("Check-out date must be after the check-in date.");
+
+                return;
+            }
+
+
+            const message =
+                "Hello NARESH Live Inn,%0A%0A" +
+
+                "I want to book a room.%0A%0A" +
+
+                "Name: " +
+                encodeURIComponent(name) +
+                "%0A" +
+
+                "Phone: " +
+                encodeURIComponent(phone) +
+                "%0A" +
+
+                "Check-In: " +
+                encodeURIComponent(checkin) +
+                "%0A" +
+
+                "Check-Out: " +
+                encodeURIComponent(checkout) +
+                "%0A" +
+
+                "Room: " +
+                encodeURIComponent(room) +
+                "%0A" +
+
+                "Room Price: ₹" +
+                encodeURIComponent(price) +
+                " / day%0A%0A" +
+
+                "Please confirm the availability.";
+
+
+            const whatsappURL =
+                "https://wa.me/" +
+                WHATSAPP_NUMBER +
+                "?text=" +
+                message;
+
+
+            window.location.href = whatsappURL;
+
+        });
+
+
+    /* =========================
+       PAYMENT
+    ========================= */
+
+    function makePayment() {
+
+        const roomSelect =
+            document.getElementById("roomType");
+
+        const selectedOption =
+            roomSelect.options[roomSelect.selectedIndex];
+
+        const amount =
+            selectedOption.getAttribute("data-price");
+
+
+        const upiURL =
+            "upi://pay" +
+            "?pa=" +
+            encodeURIComponent(UPI_ID) +
+            "&pn=" +
+            encodeURIComponent(HOTEL_NAME) +
+            "&am=" +
+            encodeURIComponent(amount) +
+            "&cu=INR";
+
+
+        window.location.href = upiURL;
+
+    }
+
+
+    /* =========================
+       COPY UPI
+    ========================= */
+
+    function copyUPI() {
+
+        if (
+            navigator.clipboard &&
+            navigator.clipboard.writeText
+        ) {
+
+            navigator.clipboard
+                .writeText(UPI_ID)
+                .then(function () {
+
+                    alert("UPI ID copied: " + UPI_ID);
+
+                })
+                .catch(function () {
+
+                    fallbackCopyUPI();
+
+                });
+
+        } else {
+
+            fallbackCopyUPI();
+
+        }
+
+    }
+
+
+    function fallbackCopyUPI() {
+
+        const textarea =
+            document.createElement("textarea");
+
+        textarea.value = UPI_ID;
+
+        textarea.style.position = "fixed";
+        textarea.style.left = "-9999px";
+
+        document.body.appendChild(textarea);
+
+        textarea.select();
+
+        try {
+
+            document.execCommand("copy");
+
+            alert("UPI ID copied: " + UPI_ID);
+
+        } catch (error) {
+
+            alert("Please copy this UPI ID manually: " + UPI_ID);
+
+        }
+
+        document.body.removeChild(textarea);
+
+    }
+
+
+    /* =========================
+       PAYMENT CONFIRMATION
+    ========================= */
+
+    function confirmPayment() {
+
+        const name =
+            document.getElementById("name").value.trim();
+
+        const phone =
+            document.getElementById("phone").value.trim();
+
+        const room =
+            document.getElementById("roomType").value;
+
+        const message =
+            "Hello NARESH Live Inn,%0A%0A" +
+
+            "I have made the payment for my room booking.%0A%0A" +
+
+            "Name: " +
+            encodeURIComponent(name || "Not provided") +
+            "%0A" +
+
+            "Phone: " +
+            encodeURIComponent(phone || "Not provided") +
+            "%0A" +
+
+            "Room: " +
+            encodeURIComponent(room) +
+            "%0A%0A" +
+
+            "Please verify the payment and confirm my booking.";
+
+
+        const whatsappURL =
+            "https://wa.me/" +
+            WHATSAPP_NUMBER +
+            "?text=" +
+            message;
+
+
+        window.location.href = whatsappURL;
+
+    }
+
+</script>
+
+</body>
+</html>
